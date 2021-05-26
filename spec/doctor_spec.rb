@@ -1,21 +1,27 @@
 require "rspec"
-require "./lib/hospital"
+require "./lib/doctor"
 
-RSpec.describe "Hospital" do
+RSpec.describe "Doctor" do
   it "has a name" do
-    hospital = Hospital.new("Seattle Grace", "Richard Webber", [])
-    expect(hospital.name).to eq("Seattle Grace")
+    doctor = Doctor.new("Meredith Grey", "General Surgery", "Harvard University", 100000)
+    expect(doctor.name).to eq("Meredith Grey")
   end
 
-  it "has a chief of surgery" do
-    hospital = Hospital.new("Seatlle Grace", "Richard Webber", [])
-    expect(hospital.chief_of_surgery).to eq("Richard Webber")
+  it "has a specialty" do
+    doctor = Doctor.new("Meredith Grey", "General Surgery", "Harvard University", 100000)
+    expect(doctor.specialty).to eq("General Surgery")
   end
 
-  it "has doctors" do
-    hospital = Hospital.new("Seattle Grace", "Richard Webber", [])
-    expect(hospital.doctors).to eq([])
-
+  it "has an education" do
+    doctor = Doctor.new("Meredith Grey", "General Surgery", "Harvard University", 100000)
+    expect(doctor.education).to eq("Harvard University")
   end
+
+  it "has a salary" do
+    doctor = Doctor.new("Meredith Grey", "General Surgery", "Harvard University", 100000)
+    expect(doctor.salary).to eq (100000)
+  end
+
+
 
 end
